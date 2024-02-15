@@ -10,5 +10,52 @@ body {
   min-height: 100vh;
   overflow: hidden;
   user-select: none;
-  background-color: #eee;
+  background-color: #e5e5e5;
+  zoom: 0.6;
+}
+
+main {
+  background: url('./images/iphone.webp') no-repeat;
+  background-size: contain;
+  width: 320px;
+  height: 640px;
+  display: flex;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+section {
+  background: #f6f6f6;
+  width: 100%;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  padding: 16px 6px;
+  margin: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 0 24px;
+  justify-content: center;
+  align-items: center;
+
+  & button {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
 }
