@@ -42,19 +42,19 @@ function startDrag(e) {
     const isRight = pullDeltaX > 0;
 
     const choiceEl = isRight ?
-      actualCard.querySelector('.choice-like') :
-      actualCard.querySelector('.choice-nope')
+      actualCard.querySelector('.choice.like') :
+      actualCard.querySelector('.choice.nope')
 
     choiceEl.style.opacity = opacity;
   }
 
-  function onEnd (e) {
+  function onEnd () {
     // remove the event listeners
     document.removeEventListener('mousemove', onMove);
     document.removeEventListener('mouseup', onEnd);
     
-    document.removeEventListener('touchmove', onMove, {pasive: true});
-    document.removeEventListener('touchend', onEnd, {pasive: true});
+    document.removeEventListener('touchmove', onMove);
+    document.removeEventListener('touchend', onEnd);
 
    // know if the user has taken a decision to remove the card
     const decisionMade = Math.abs(pullDeltaX) >= DECISION_THRESHOLD
@@ -65,7 +65,7 @@ function startDrag(e) {
       actualCard.classList.add(goRight ? 'goRight' : 'goLeft');
       actualCard.addEventListener('transitionend', () => {
         actualCard.remove();
-      }, {once: true})
+      })
     } else {
       actualCard.classList.add('reset');
       actualCard.classList.remove('go-right', 'go-left')
