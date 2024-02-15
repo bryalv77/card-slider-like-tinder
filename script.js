@@ -62,7 +62,7 @@ function startDrag(e) {
       const goRight = pullDeltaX > 0
 
       // add class acording to the decision
-      actualCard.classList.add(goRight ? 'goRight' : 'goLeft')
+      actualCard.classList.add(goRight ? 'go-right' : 'go-left')
       actualCard.addEventListener('transitionend', () => {
         actualCard.remove()
       })
